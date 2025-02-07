@@ -4,6 +4,7 @@ from typing import List
 
 from include.mmtcontract import MMTContract
 from include.mmtorder import MMTOrder
+from include.mmttickdata import MMTTickData
 
 from include.mmtdatatype import MMTExchange, MMTContractType, MMTDeliveryType, MMTTradeDirection, MMTOrderType, \
     MMTOrderOpenCloseType, MMTOrderStatus, MMTTradeApiType, MMTCommissionRateType, MMTCurrency, MMTPrictType
@@ -63,6 +64,8 @@ class MMTTurtleStrategy:
         self.m_tradeContract = None
         self.m_orderInfos = {}
         self.m_unfilledVolume = {}
+
+        self.m_signalTickData = MMTTickData()
 
     def onContracts(self, contracts: List[MMTContract]):
         for contract in contracts:
@@ -222,8 +225,3 @@ class MMTTurtleStrategy:
         except Exception as e:
             logging.info(f"can't open parameters file. Error: {str(e)}")
 
-
-# 简单测试
-if __name__ == "__main__":
-    strategy = MMTTurtleStrategy()
-    # 这里可以添加更多测试代码
