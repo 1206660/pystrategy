@@ -1,7 +1,7 @@
 # 假设 mmtdatatype 模块中定义了 MMTTradeApiType 和 MMTCurrency 枚举类型
 # 这里简单用整数常量代替，实际使用时需要根据具体情况调整
-MMT_TAT_NULL = 0
-MMT_CUR_CNY = 1
+
+from mmtdatatype import MMT_TAT_NULL, MMT_CUR_CNY
 
 class MMTAccount:
     def __init__(self):

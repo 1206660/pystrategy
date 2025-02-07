@@ -3,10 +3,8 @@ from dataclasses import dataclass
 from datetime import datetime
 
 # 假设这些枚举类型在其他文件中定义，这里简单模拟
-MMT_TAT_NULL = 0
-MMT_TD_NULL = 0
-MMT_OT_NULL = 0
-MMT_EX_NULL = 0
+
+from mmtdatatype import MMT_TAT_NULL, MMT_TD_NULL, MMT_OT_NULL
 
 @dataclass
 class MMTTrade:

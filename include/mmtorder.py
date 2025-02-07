@@ -1,7 +1,8 @@
 # 假设 mmtdatatype 和 mmtorderinfo 模块已经存在，并且定义了相应的类型和常量
 # 例如 MMT_TAT_NULL, MMT_TD_NULL, MMT_OT_NULL, MMT_OS_NULL 等
 
-import mmtdatatype
+# 假设 mmtdatatype 模块中定义了 MMT_TAT_NULL 等常量
+from mmtdatatype import MMT_TAT_NULL, MMT_TD_NULL, MMT_OT_NULL, MMT_OS_NULL
 
 class MMTOrder:
     def __init__(self, order_info=None):

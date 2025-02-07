@@ -2,10 +2,9 @@
 
 # 假设 mmtdatatype 模块中定义了相应的枚举类型
 # 这里简单用整数常量代替，实际使用时需要根据具体情况调整
-MMT_CT_NULL = 0
-MMT_DT_NULL = 0
-MMT_EX_NULL = 0
-MMT_TAT_NULL = 0
+
+from mmtdatatype import MMT_TAT_NULL, MMT_EX_NULL, MMT_DT_NULL, MMT_CT_NULL
+
 PRECISION = 0.000001
 
 class MMTContract:
