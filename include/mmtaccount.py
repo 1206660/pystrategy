@@ -1,7 +1,9 @@
 # 假设 mmtdatatype 模块中定义了 MMTTradeApiType 和 MMTCurrency 枚举类型
 # 这里简单用整数常量代替，实际使用时需要根据具体情况调整
 
-from mmtdatatype import MMT_TAT_NULL, MMT_CUR_CNY
+from include.mmtdatatype import MMTExchange, MMTContractType, MMTDeliveryType, MMTTradeDirection, MMTOrderType, \
+    MMTOrderOpenCloseType, MMTOrderStatus, MMTTradeApiType, MMTCommissionRateType, MMTCurrency, MMTPrictType
+
 
 class MMTAccount:
     def __init__(self):
@@ -31,11 +33,11 @@ class MMTAccount:
         self.m_fundAccountId = ""  # 资金账号
         self.m_orderStation = ""
 
-        self.m_tradeApiType = MMT_TAT_NULL
+        self.m_tradeApiType = MMTTradeApiType.MMT_TAT_NULL
         self.m_balance = 0
         self.m_available = 0
         self.m_currentMargin = 0
-        self.m_currency = MMT_CUR_CNY
+        self.m_currency = MMTTradeApiType.MMT_CUR_CNY
 
         self.m_tradeApi = None
 

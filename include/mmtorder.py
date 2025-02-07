@@ -1,24 +1,25 @@
 # 假设 mmtdatatype 和 mmtorderinfo 模块已经存在，并且定义了相应的类型和常量
 # 例如 MMT_TAT_NULL, MMT_TD_NULL, MMT_OT_NULL, MMT_OS_NULL 等
 
-# 假设 mmtdatatype 模块中定义了 MMT_TAT_NULL 等常量
-from mmtdatatype import MMT_TAT_NULL, MMT_TD_NULL, MMT_OT_NULL, MMT_OS_NULL
+from include.mmtdatatype import MMTExchange, MMTContractType, MMTDeliveryType, MMTTradeDirection, MMTOrderType, \
+    MMTOrderOpenCloseType, MMTOrderStatus, MMTTradeApiType, MMTCommissionRateType, MMTCurrency, MMTPrictType
+
 
 class MMTOrder:
     def __init__(self, order_info=None):
         if order_info is None:
             # 对应 C++ 中的默认构造函数
-            self.m_tradeApiType = MMT_TAT_NULL
+            self.m_tradeApiType = MMTTradeApiType.MMT_TAT_NULL
             self.m_orderPrice = 0.0
             self.m_orderVolume = 0.0
-            self.m_direction = MMT_TD_NULL
-            self.m_orderType = MMT_OT_NULL
+            self.m_direction = MMTTradeApiType.MMT_TD_NULL
+            self.m_orderType = MMTTradeApiType.MMT_OT_NULL
             self.m_filledPrice = 0.0
             self.m_filledVolume = 0.0
             self.m_unfilledVolume = 0.0
             self.m_cancelledVolume = 0.0
             self.m_rejectedVolume = 0.0
-            self.m_orderStatus = MMT_OS_NULL
+            self.m_orderStatus = MMTTradeApiType.MMT_OS_NULL
         else:
             # 对应 C++ 中的带参数构造函数
             self.m_fundId = order_info.m_fundId
@@ -37,7 +38,7 @@ class MMTOrder:
             self.m_unfilledVolume = order_info.m_volume
             self.m_cancelledVolume = 0
             self.m_rejectedVolume = 0
-            self.m_orderStatus = MMT_OS_NULL
+            self.m_orderStatus = MMTTradeApiType.MMT_OS_NULL
 
         # 其他成员变量
         self.m_systemId = ""

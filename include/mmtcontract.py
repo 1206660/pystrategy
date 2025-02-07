@@ -3,7 +3,9 @@
 # 假设 mmtdatatype 模块中定义了相应的枚举类型
 # 这里简单用整数常量代替，实际使用时需要根据具体情况调整
 
-from mmtdatatype import MMT_TAT_NULL, MMT_EX_NULL, MMT_DT_NULL, MMT_CT_NULL
+from include.mmtdatatype import MMTExchange, MMTContractType, MMTDeliveryType, MMTTradeDirection, MMTOrderType, \
+    MMTOrderOpenCloseType, MMTOrderStatus, MMTTradeApiType, MMTCommissionRateType, MMTCurrency, MMTPrictType
+
 
 PRECISION = 0.000001
 
@@ -11,10 +13,10 @@ class MMTContract:
     def __init__(self):
         self.m_id = ""
         self.m_name = ""
-        self.m_type = MMT_CT_NULL
-        self.m_deliveryType = MMT_DT_NULL
-        self.m_exchange = MMT_EX_NULL
-        self.m_tradeApiType = MMT_TAT_NULL
+        self.m_type = MMTContractType.MMT_CT_NULL
+        self.m_deliveryType = MMTContractType.MMT_DT_NULL
+        self.m_exchange = MMTContractType.MMT_EX_NULL
+        self.m_tradeApiType = MMTContractType.MMT_TAT_NULL
         self.m_priceTick = 0
         self.m_volumeMultiple = 0
         self.m_minVolume = 0

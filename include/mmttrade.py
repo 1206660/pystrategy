@@ -4,18 +4,19 @@ from datetime import datetime
 
 # 假设这些枚举类型在其他文件中定义，这里简单模拟
 
-from mmtdatatype import MMT_TAT_NULL, MMT_TD_NULL, MMT_OT_NULL
+from include.mmtdatatype import MMTExchange, MMTContractType, MMTDeliveryType, MMTTradeDirection, MMTOrderType, \
+    MMTOrderOpenCloseType, MMTOrderStatus, MMTTradeApiType, MMTCommissionRateType, MMTCurrency, MMTPrictType
 
 @dataclass
 class MMTTrade:
     m_fundId: str = ""
     m_accountId: str = ""
-    m_tradeApiType: int = MMT_TAT_NULL
+    m_tradeApiType: int = MMTTradeApiType.MMT_TAT_NULL
     m_strategyId: str = ""
     m_localOrderId: str = ""
     m_contractId: str = ""
-    m_direction: int = MMT_TD_NULL
-    m_orderType: int = MMT_OT_NULL
+    m_direction: int = MMTTradeApiType.MMT_TD_NULL
+    m_orderType: int = MMTTradeApiType.MMT_OT_NULL
     m_price: float = 0.0
     m_volume: float = 0.0
     m_time: datetime = datetime.now()
@@ -29,12 +30,12 @@ class MMTTrade:
     def __init__(self,
                  fundId="",
                  accountId="",
-                 tradeApiType=MMT_TAT_NULL,
+                 tradeApiType=MMTTradeApiType.MMT_TAT_NULL,
                  strategyId="",
                  localOrderId="",
                  contractId="",
-                 direction=MMT_TD_NULL,
-                 orderType=MMT_OT_NULL,
+                 direction=MMTTradeApiType.MMT_TD_NULL,
+                 orderType=MMTTradeApiType.MMT_OT_NULL,
                  price=0.0,
                  volume=0.0,
                  time=datetime.now(),
