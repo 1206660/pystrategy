@@ -4,8 +4,9 @@ from typing import List
 
 from include.mmtcontract import MMTContract
 from include.mmtorder import MMTOrder
-from include.mmttickdata import MMTTickData
 
+from include.mmtdatatype import MMTExchange, MMTContractType, MMTDeliveryType, MMTTradeDirection, MMTOrderType, \
+    MMTOrderOpenCloseType, MMTOrderStatus, MMTTradeApiType, MMTCommissionRateType, MMTCurrency, MMTPrictType
 
 class MMTTurtleStrategy:
     def __init__(self):
@@ -180,7 +181,7 @@ class MMTTurtleStrategy:
                 self.m_unfilledVolume[order.m_localOrderId] = order.m_unfilledVolume
 
         if order.m_localOrderId in self.m_orderInfos:
-            if order.m_orderStatus in [MMT_OS_FILLED, MMT_OS_CANCELLED, MMT_OS_REJECTED]:  # 假设这些常量已经定义
+            if order.m_orderStatus in [MMTOrderStatus.MMT_OS_FILLED, MMTOrderStatus.MMT_OS_CANCELLED, MMTOrderStatus.MMT_OS_REJECTED]:  # 假设这些常量已经定义
                 del self.m_orderInfos[order.m_localOrderId]
                 del self.m_unfilledVolume[order.m_localOrderId]
 

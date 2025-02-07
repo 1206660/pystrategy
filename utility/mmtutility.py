@@ -91,11 +91,11 @@ class MMTUtility:
 
     @staticmethod
     def isBuy(direction):
-        return direction in [MMT_TD_BUY, MMT_TD_BUYTOCOVER]
+        return direction in [MMTTradeDirection.MMT_TD_BUY, MMTTradeDirection.MMT_TD_BUYTOCOVER]
 
     @staticmethod
     def isOpen(direction):
-        return direction in [MMT_TD_BUY, MMT_TD_SELLSHORT]
+        return direction in [MMTTradeDirection.MMT_TD_BUY, MMTTradeDirection.MMT_TD_SELLSHORT]
 
     @staticmethod
     def getCounterPartyDirection(direction):
